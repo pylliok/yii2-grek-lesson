@@ -2,6 +2,7 @@
 
 namespace frontend\modules\cabinet\controllers;
 
+use common\controllers\AuthController;
 use Yii;
 use common\models\Advert;
 use common\models\Search\AdvertSearch;
@@ -12,29 +13,12 @@ use yii\filters\VerbFilter;
 /**
  * AdvertController implements the CRUD actions for Advert model.
  */
-class AdvertController extends Controller
+//class AdvertController extends Controller
+class AdvertController extends AuthController //AuthController там написана права доступа к личному кабинету
 {
 
     public $layout = 'inner';
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
-    /**
-     * Lists all Advert models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $searchModel = new AdvertSearch();
