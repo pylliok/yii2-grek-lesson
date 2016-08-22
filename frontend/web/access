@@ -1,0 +1,31 @@
+#включаем модуль
+#RewriteEngine On 
+
+#запрашиваемый файл не является файлом 
+#RewriteCond %{REQUEST_FILENAME} !-f
+#запрашиваемый файл не является директорией
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule . index.php
+
+# Mod_autoindex
+
+<IfModule mod_autoindex.c>
+
+Options -Indexes
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+Options +FollowSymlinks
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+#запрашиваемый файл не является директорией
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php
+
+#Mod rewrite
+</IfModule>

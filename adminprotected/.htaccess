@@ -1,0 +1,9 @@
+#включаем модуль
+RewriteEngine On 
+
+#запрашиваемый файл не является файлом 
+RewriteCond %{REQUEST_FILENAME} !-f
+#запрашиваемый файл не является директорией
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php
