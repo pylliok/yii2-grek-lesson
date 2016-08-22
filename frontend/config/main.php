@@ -54,6 +54,7 @@ return [
            'identityClass' => 'common\models\Myuser',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+           'loginUrl' => '/main/main/login', //куда перенаправлять если готь зашел на стр где необходима авторизация
         ],
 
         'session' => [
